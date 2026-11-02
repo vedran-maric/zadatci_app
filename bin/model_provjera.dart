@@ -1,18 +1,21 @@
 // ignore_for_file: avoid_print
 import 'dart:convert';
+
 import 'package:zadatci_app/zadatak.dart';
+
 void main() {
- const tekst = '''
+  const tekst = '''
 [
  {"id": 1, "naslov": "Instalacija", "zavrsen": true},
- {"id": 2, "naslov": "Git"},
+ {"id": 2, "naslov": "Git", "opis": "Instalacija i konfiguracija Gita"},
  {"id": 3, "naslov": "Dart", "zavrsen": false}
 ]''';
- final lista = (jsonDecode(tekst) as List)
- .map((e) => Zadatak.fromJson(e as Map<String, dynamic>))
- .toList();
- print('Zadataka: ${lista.length}');
- print('Drugi je zavrsen: ${lista[1].zavrsen}');
- print(jsonEncode(lista.first.toJson()));
- print(lista[1].kopiraj(zavrsen: true).zavrsen);
+  final lista = (jsonDecode(tekst) as List)
+      .map((e) => Zadatak.fromJson(e as Map<String, dynamic>))
+      .toList();
+  print('Zadataka: ${lista.length}');
+  print('Drugi je zavrsen: ${lista[1].zavrsen}');
+  print(jsonEncode(lista.first.toJson()));
+  print('Drugi zadatak opis: ${lista[1].opis}');
+  print(lista[1].kopiraj(zavrsen: true).zavrsen);
 }
