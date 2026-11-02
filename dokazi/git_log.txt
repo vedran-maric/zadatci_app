@@ -1,0 +1,5 @@
+19d2715 README i dokazi
+4bf79c0 Prikaz stanja i ListView
+8cbb326 Repozitorij s Future.delayed
+1c53e33 Model Zadatak s fromJson
+7edc362 Pocetni projekt
